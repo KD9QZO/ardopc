@@ -50,26 +50,31 @@
 
 
 #include <QtWidgets>
-#include "QSettings"
+#include <QSettings>
 
 #include "TabDialog.h"
+
 
 extern char Host[256];
 extern char Port[16];
 
+
 QLineEdit *hostEdit;
 QLineEdit *portEdit;
 
-//ARDOP_GUI::ARDOP_GUI(QWidget *parent) : QMainWindow(parent), ui(new Ui::ARDOP_GUI)
 
-TabDialog::TabDialog(QWidget *parent) : QDialog(parent)
-{
+#if 0
+ARDOP_GUI::ARDOP_GUI(QWidget *parent): QMainWindow(parent), ui(new Ui::ARDOP_GUI)
+#endif
+
+
+TabDialog::TabDialog(QWidget *parent): QDialog(parent) {
 	tabWidget = new QTabWidget;
 	tabWidget->addTab(new GeneralTab, tr("General"));
 
 	buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
-	//   connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+//	connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(myaccept()));
 	connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
@@ -81,14 +86,13 @@ TabDialog::TabDialog(QWidget *parent) : QDialog(parent)
 	setWindowTitle(tr("ARDOP_GUI onfiguration"));
 }
 
-GeneralTab::GeneralTab(QWidget *parent)
-    : QWidget(parent)
-{
+GeneralTab::GeneralTab(QWidget *parent): QWidget(parent) {
 	QLabel *hostLabel = new QLabel(tr("Host Name:"));
 	hostEdit = new QLineEdit(Host);
 	QLabel *portLabel = new QLabel(tr("Port:"));
 	portEdit = new QLineEdit(Port);
 	QVBoxLayout *mainLayout = new QVBoxLayout;
+
 	mainLayout->addWidget(hostLabel);
 	mainLayout->addWidget(hostEdit);
 	mainLayout->addWidget(portLabel);
@@ -97,13 +101,12 @@ GeneralTab::GeneralTab(QWidget *parent)
 	setLayout(mainLayout);
 }
 
-void TabDialog::myaccept()
-{
+void TabDialog::myaccept() {
 	QString val = hostEdit->text();
 	QByteArray qb = val.toLatin1();
-	char * ptr = qb.data();
+	char *ptr = qb.data();
+
 	strcpy(Host, ptr);
-		
 	val = portEdit->text();
 	qb = val.toLatin1();
 	ptr = qb.data();
@@ -118,6 +121,5 @@ void TabDialog::myaccept()
 	QMessageBox::information(this, tr("ARDOP_GUI"), tr("You need to restart to apply changes"), QMessageBox::Ok);
 }
 
-TabDialog::~TabDialog()
-{
+TabDialog::~TabDialog() {
 }
