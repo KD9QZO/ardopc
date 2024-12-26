@@ -1,48 +1,80 @@
-# Prerequisites
+#
+# .gitignore
+#
+
+## Temp & Backup Files ##
+
+*~
+*.bak
+*.tmp
+
+
+## Prerequisites ##
+
 *.d
 
-# Object files
+
+## Object files ##
+
 *.o
 *.ko
 *.obj
 *.elf
 
-# Linker output
+
+## Linker output ##
+
 *.ilk
 *.map
 *.exp
 
-# Precompiled Headers
+
+## Precompiled Headers ##
+
 *.gch
 *.pch
 
-# Libraries
+
+## Libraries ##
+
 *.lib
 *.a
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+
+## Shared objects (inc. Windows DLLs) ##
+
 *.dll
 *.so
 *.so.*
 *.dylib
 
-# Executables
+
+## Executables ##
+
 *.exe
 *.out
 *.app
 *.i*86
 *.x86_64
 *.hex
+ardopofdm
+ardop1ofdm
+ardop2ofdm
+ardop_gui
 
-# Debug files
+
+## Debug files ##
+
 *.dSYM/
 *.su
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
+
+## Kernel Module Compile Results ##
+
 *.mod*
 *.cmd
 .tmp_versions/
@@ -50,3 +82,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+## JetBrains IDE ##
+
+.idea/
+cmake-*/
+build-*/
