@@ -60,7 +60,6 @@
 *.x86_64
 *.hex
 ardopofdm
-ardop1ofdm
 ardop2ofdm
 ardop_gui
 
