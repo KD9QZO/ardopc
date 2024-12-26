@@ -1,0 +1,3 @@
+[submodule "ardop1ofdm"]
+	path = ardop1ofdm
+	url = https://github.com/KD9QZO/ardop1ofdm.git
