@@ -4,3 +4,6 @@
 [submodule "ardop2ofdm"]
 	path = ardop2ofdm
 	url = https://github.com/KD9QZO/ardop2ofdm.git
+[submodule "ardop_gui"]
+	path = ardop_gui
+	url = https://github.com/KD9QZO/ardop_gui.git
