@@ -59,9 +59,10 @@
 *.i*86
 *.x86_64
 *.hex
-ardopofdm
-ardop2ofdm
-ardop_gui
+#ardopofdm
+#ardop1ofdm
+#ardop2ofdm
+#ardop_gui
 
 
 ## Debug files ##
